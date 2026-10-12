@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "CPS IoT Lab",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "dht22",
+      "id": "dht",
+      "top": -9.3,
+      "left": 178.2,
+      "attrs": {
+        "temperature": "24.5",
+        "humidity": "48"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:15", "dht:SDA", "green", ["h0"]],
+    ["esp:3V3", "dht:VCC", "red", ["h0"]],
+    ["esp:GND.1", "dht:GND", "black", ["h0"]]
+  ],
+  "dependencies": {}
+}

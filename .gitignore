@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+frontend/node_modules/
+
+# build outputs
+dist/
+frontend/.next/
+frontend/out/
+
+# secrets — NEVER commit
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+frontend/.env.*.local
+
+# keep examples
+!.env.example
+!frontend/.env.local.example
+
+# logs / coverage / IDE
+*.log
+coverage/
+.idea/
+.vscode/
+.DS_Store
+
+# misc
+*.tsbuildinfo
