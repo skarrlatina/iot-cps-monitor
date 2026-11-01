@@ -13,32 +13,32 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-steel/15 bg-fog/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
-        <Link
-          href="/"
-          className="font-mono text-sm font-medium tracking-wide text-signal"
-        >
-          CPS Monitor
+    <header className="sticky top-0 z-50 border-b border-signal/20 bg-[#050910]/75 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-3 sm:px-6">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="sig-mark h-9 w-9 text-[10px]">CPS</span>
+          <span className="leading-tight">
+            <span className="block font-display text-sm tracking-[0.18em] text-ink">
+              CPS MONITOR
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-signal">
+              IoT telemetry
+            </span>
+          </span>
         </Link>
 
-        <ul className="flex items-center gap-1 sm:gap-2">
+        <ul className="flex items-center">
           {links.map(({ href, label }) => {
             const active =
-              href === '/'
-                ? pathname === '/'
-                : pathname.startsWith(href);
+              href === '/' ? pathname === '/' : pathname.startsWith(href);
 
             return (
               <li key={href}>
                 <Link
                   href={href}
-                  className={[
-                    'block px-3 py-2 text-sm transition-colors',
-                    active
-                      ? 'font-medium text-ink border-b-2 border-signal'
-                      : 'text-steel hover:text-ink',
-                  ].join(' ')}
+                  className={['nav-link', active ? 'nav-link-active' : ''].join(
+                    ' ',
+                  )}
                 >
                   {label}
                 </Link>
